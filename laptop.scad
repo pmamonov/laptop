@@ -10,6 +10,10 @@ R	= 5;		// hinge radius
 HL	= 25;		// hinge length
 FN	= 30;		// parts "quality"
 
+KW = 280;
+KL = 80;
+KH = 5;
+
 HO	= C * (W + L) / 2;	// hinge offset
 D	= R;			// body z-axis displacement
 
@@ -82,8 +86,12 @@ module keyboard()
 	rho = W - HO - 3 * HL;
 	difference() {
 		union() {
-			translate([0, R, D - T])
-				round_cube(W, L, T);
+			difference() {
+				translate([0, R, D - T])
+					round_cube(W, L, T);
+				translate([(W - KW) / 2, (L - KL) / 2 + R, D - 1.05 * T])
+					cube([KW, KL, 1.1 * T], center=false);
+			}
 
 			translate([lho, 0, 0])
 				rotate([0, 90, 0]) cyl_hole(HL, 1.9 * R);
