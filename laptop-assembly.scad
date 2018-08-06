@@ -1,10 +1,25 @@
 include <laptop.scad>
+include <18650.scad>
 
 rotate([0, 0, 0]) color("magenta") bottom();
 
-rotate([0, 0, 0]) color("lightgreen") keyboard();
+color("blue") {
+	y = 2 * R + T;
+	z = D - HB + T;
+	r = 18 + 2;
+	l = 65 + 2;
 
-rotate([90, 0, 0])	color("cyan") lid();
+	translate([W / 2 - 1.5 * l, y, z]) bat18650();
+	translate([W / 2 - 0.5 * l, y, z]) bat18650();
+	translate([W / 2 + 0.5 * l, y, z]) bat18650();
+	translate([W / 2 - 1.5 * l, y + r, z]) bat18650();
+	translate([W / 2 - 0.5 * l, y + r, z]) bat18650();
+	translate([W / 2 + 0.5 * l, y + r, z]) bat18650();
+}
+
+rotate([60, 0, 0]) color("lightgreen") keyboard();
+
+rotate([120, 0, 0])	color("cyan") lid();
 
 color("yellow")
 	rotate([0, 90, 0])
