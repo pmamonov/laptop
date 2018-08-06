@@ -1,5 +1,6 @@
 include <laptop.scad>
 include <18650.scad>
+include <bpi-m3.scad>
 
 rotate([0, 0, 0]) color("magenta") bottom();
 
@@ -16,6 +17,8 @@ color("blue") {
 	translate([W / 2 - 0.5 * l, y + r, z]) bat18650();
 	translate([W / 2 + 0.5 * l, y + r, z]) bat18650();
 }
+
+translate([W - T, L / 2, D - HB + T + 2]) bpi_m3();
 
 rotate([60, 0, 0]) color("lightgreen") keyboard();
 
