@@ -2,7 +2,7 @@
 
 W	= 300;		// width
 L	= 200;		// length
-HB	= 25;		// bottom height
+HB	= 27;		// bottom height
 HT	= 7;		// lid height
 T	= 2;		// walls thickness
 C	= 0.05;		// corner radius as fraction of (W + L) / 2
