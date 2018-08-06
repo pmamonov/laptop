@@ -1,6 +1,7 @@
 include <laptop.scad>
 include <18650.scad>
 include <bpi-m3.scad>
+include <hdd25.scad>
 
 rotate([0, 0, 0]) color("magenta") bottom();
 
@@ -19,6 +20,8 @@ color("blue") {
 }
 
 translate([W - T, L / 2, D - HB + T + 2]) bpi_m3();
+
+color("gray") translate([W / 2 - 35, L - 110, D - HB + T + 2]) hdd25();
 
 rotate([60, 0, 0]) color("lightgreen") keyboard();
 
